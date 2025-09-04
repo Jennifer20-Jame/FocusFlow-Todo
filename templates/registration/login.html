@@ -1,0 +1,26 @@
+{% extends "ToDo_List/base.html" %}
+{% load static %}
+{% load django_bootstrap5 %}
+{% block content %}
+    
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh; background-color: #f9f9f9;">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    
+    <!-- Logo -->
+    <div class="text-center mb-3">
+      <img src="{% static 'images/logoo.png' %}" alt="FocusFlow Logo" height="100">
+    </div>
+    
+    <h2 class="text-center mb-4">Login Page</h2>
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+    <p class="text-center mt-3">
+      Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>
+    </p>
+  </div>
+</div>
+  
+{% endblock %}

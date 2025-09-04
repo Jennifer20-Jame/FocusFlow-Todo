@@ -1,0 +1,14 @@
+{% extends "ToDo_List/base.html" %}
+
+{% load django_bootstrap5 %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Task</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary mt-2">Save Changes</button>
+        <a href="{% url 'task-list' %}" class="btn btn-secondary mt-2">Cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'ToDo_List/base.html' %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Hello {{request.user}}, Welcome To Your Dashboard!</h2>
+
+    <div class="row text-center">
+        <!-- Total Tasks -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 bg-primary text-white rounded">
+                <h4>Total Tasks</h4>
+                <h2>{{ total_tasks }}</h2>
+            </div>
+        </div>
+
+        <!-- Completed Tasks -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 bg-success text-white rounded">
+                <h4>Completed</h4>
+                <h2>{{ completed_tasks }}</h2>
+            </div>
+        </div>
+
+        <!-- Pending Tasks -->
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm p-3 bg-warning text-dark rounded">
+                <h4>Pending</h4>
+                <h2>{{ pending_tasks }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'task-list' %}" class="btn btn-outline-dark">View All Tasks</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'ToDo_List/base.html' %}
+{% block content %}
+
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>My Tasks</h2>
+    <a href="{% url 'add-task' %}" class="btn btn-sm btn-primary">+ Add Task</a>
+</div>
+
+<ul class="list-group">
+  {% for task in tasks %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <form method="post" action="{% url 'task-done' task.id %}">
+            {% csrf_token %}
+          
+        <input type="checkbox" onChange="this.form.submit()" {% if task.done %}checked{% endif %}>
+        {{ task.title }}
+      </form>
+      
+      
+      <a href="{% url 'view-task' task.id %}" class="btn btn-sm btn-primary">View</a>
+      
+
+    </li>
+  {% endfor %}
+
+</ul>
+{% endblock %}

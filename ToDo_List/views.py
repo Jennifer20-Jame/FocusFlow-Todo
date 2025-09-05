@@ -67,7 +67,7 @@ def add_task(request):
     else:
         form = TaskForm()
         context = {'form': form}
-        return render(request, template_name='ToDO_List/add_task.html', context=context)
+        return render(request, template_name='ToDo_List/add_task.html', context=context)
 
 @login_required
 def edit_task(request, pk):
@@ -80,7 +80,7 @@ def edit_task(request, pk):
     else:
             form = TaskForm(instance=task)
             context = {'form': form}
-            return render(request, template_name='ToDO_List/edit_task.html', context=context)
+            return render(request, template_name='ToDo_List/edit_task.html', context=context)
 
 @login_required
 def delete_task(request, pk):
@@ -91,5 +91,5 @@ def delete_task(request, pk):
     else:
         context = {'task': task}
         
-        return render(request, template_name='ToDO_List/delete_task.html', context=context)
+        return render(request, template_name='ToDo_List/delete_task.html', context=context)
         

@@ -23,7 +23,7 @@ def home(request):
 def task_list(request):
     tasks = Task.objects.filter(user=request.user)
     context = {'tasks': tasks}
-    return render(request, template_name='ToDO_List/task_list.html', context=context)
+    return render(request, template_name='ToDo_List/task_list.html', context=context)
 
 @login_required
 def task_detail(request, pk):

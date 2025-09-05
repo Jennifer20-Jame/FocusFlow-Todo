@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%%2*seu8+%*dhls4w24v%y038cg7k5kny5!27iqs%5lqrj#dgh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'focusfloww.pythonanywhere.com', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['focusfloww.pythonanywhere.com']
 
 
 # Application definition
